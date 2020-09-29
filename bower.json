@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "hvicklib": "https://github.com/bartelsmichael5/hvicklib.git"
   }
 }
