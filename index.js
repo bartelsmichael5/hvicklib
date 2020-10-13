@@ -23,7 +23,20 @@
                 distanceY = pointB.y - pointA.y,
                 distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
             return distance;
-        }
+        },
+        updateVelocity(body, forceOnX, forceOnY) {
+            const
+                angle = body.rotation * Math.PI / 180,
+                accelerationOnX  = Math.cos(angle) * forceOnX,
+                accelerationOnY = Math.sin(angle) * forceOnY;
+            body.velocityX += accelerationOnX;
+            body.velocityY += accelerationOnY;
+        },
+        updatePosition(body) {
+            body.x += body.velocityX;
+            body.y += body.velocityY;
+            body.rotation += body.rotationalVelocity;
+        },
     },
   };
 }(window, window._));
